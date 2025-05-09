@@ -211,3 +211,10 @@ docker-pr 14261 root 4u IPv6 78233 0t0 TCP *:40400 (LISTEN)
 docker-pr 14301 root 4u IPv4 78250 0t0 TCP *:8080 (LISTEN)
 
 docker-pr 14308 root 4u IPv6 78253 0t0 TCP *:8080 (LISTEN)
+
+---
+
+### **Credits** 🎉
+
+- The idea of installing **Docker inside a VM** was inspired by the work of **Vikash Kumar** and his [installation script](https://github.com/vikash-kumar01/installation_scripts/blob/master/docker.sh).
+- This guide adapts his method to work with **WSL** instead of a traditional VM, allowing Docker to run inside **Windows Subsystem for Linux**.
