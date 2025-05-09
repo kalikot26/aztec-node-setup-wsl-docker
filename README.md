@@ -62,14 +62,14 @@ Look for the `inet` line under **eth0** to find the **IP address** of your WSL i
 
 Replace `172.18.151.151` with your **IP address** from the previous step.
 
-```
+```bash
 netsh interface portproxy add v4tov4 listenport=40400 listenaddress=0.0.0.0 connectport=40400 connectaddress=YOUR_WSL_IP
 netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=8080 connectaddress=YOUR_WSL_IP
 ```
 
 **Example**: If your WSL IP is `172.18.151.151`, the command will look like:
 
-```Powershell(admin)
+```bash
 netsh interface portproxy add v4tov4 listenport=40400 listenaddress=0.0.0.0 connectport=40400 connectaddress=172.18.151.151
 netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=8080 connectaddress=172.18.151.151
 ```
@@ -82,7 +82,7 @@ Ensure Windows allows incoming traffic on the ports you’ve forwarded:
 
 1. **Add firewall rules** in **PowerShell (Admin)**:
 
-```Powershell(admin)
+```bash
 New-NetFirewallRule -DisplayName "Allow 40400" -Direction Inbound -Protocol TCP -LocalPort 40400 -Action Allow
 New-NetFirewallRule -DisplayName "Allow 8080" -Direction Inbound -Protocol TCP -LocalPort 8080 -Action Allow
 ```
@@ -112,26 +112,23 @@ Now that Docker Desktop is removed, let’s install Docker inside WSL.
 
 ### **Install Docker**:
 
-`sudo apt update -y`
-
-`sudo apt install apt-transport-https ca-certificates curl software-properties-common -y`
-
-`curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
-
-`sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" -y`
-
-`sudo apt update -y`
-
-`sudo apt install docker-ce -y`
+```bash
+sudo apt update -y
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" -y
+sudo apt update -y
+sudo apt install docker-ce -y
+sudo chmod 777 /var/run/docker.sock
+```
 
 ### **Verify Docker Installation**:
 
 `sudo docker --version`
 
-### **Fix Docker Socket Permissions**:
+### **Test Docker by Running a HelloWorld Container**:
 
-`sudo chmod 777 /var/run/docker.sock`
-
+`sudo docker run hello-world`
 
 ---
 
@@ -145,17 +142,18 @@ Ensure the firewall is correctly configured:
 
 2. **Allow Docker and SSH**:
 
-   `ufw allow 22`
+   ```bash
+   ufw allow 22
+   ufw allow ssh
+   ufw enable
+   ```
 
-   `ufw allow ssh`
+4. **Allow Aztec Node Ports**:
 
-   `ufw enable`
-
-3. **Allow Aztec Node Ports**:
-
-   `ufw allow 40400`
-
-   `ufw allow 8080`
+   ```bash
+   ufw allow 40400
+   ufw allow 8080
+   ```
 
    ### **Exit root**:
 
@@ -180,7 +178,7 @@ Now, let’s install and configure your **Aztec node** on the **alpha-testnet**:
 
 3. **Start Aztec Node**:
 
-```
+```bash
    aztec-up alpha-testnet
    aztec start --node --archiver --sequencer \
    --network alpha-testnet \
