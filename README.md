@@ -129,9 +129,6 @@ Now that Docker Desktop is removed, let’s install Docker inside WSL.
 
 `sudo chmod 777 /var/run/docker.sock`
 
-### **Exit root**:
-
-`exit`
 
 ---
 
@@ -139,7 +136,7 @@ Now that Docker Desktop is removed, let’s install Docker inside WSL.
 
 Ensure the firewall is correctly configured:
 
-1. **Install UFW** (if not installed):
+1. **Install UFW** (if not installed - also using root/su):
 
    `sudo apt install ufw -y`
 
@@ -156,6 +153,10 @@ Ensure the firewall is correctly configured:
    `ufw allow 40400`
 
    `ufw allow 8080`
+
+   ### **Exit root**:
+
+   `exit`
 
 ---
 
