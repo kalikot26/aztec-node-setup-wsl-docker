@@ -62,15 +62,17 @@ Look for the `inet` line under **eth0** to find the **IP address** of your WSL i
 
 Replace `172.18.151.151` with your **IP address** from the previous step.
 
-`netsh interface portproxy add v4tov4 listenport=40400 listenaddress=0.0.0.0 connectport=40400 connectaddress=YOUR_WSL_IP`
-
-`netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=8080 connectaddress=YOUR_WSL_IP`
+```
+netsh interface portproxy add v4tov4 listenport=40400 listenaddress=0.0.0.0 connectport=40400 connectaddress=YOUR_WSL_IP
+netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=8080 connectaddress=YOUR_WSL_IP
+```
 
 **Example**: If your WSL IP is `172.18.151.151`, the command will look like:
 
-`netsh interface portproxy add v4tov4 listenport=40400 listenaddress=0.0.0.0 connectport=40400 connectaddress=172.18.151.151`
-
-`netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=8080 connectaddress=172.18.151.151`
+```Powershell(admin)
+netsh interface portproxy add v4tov4 listenport=40400 listenaddress=0.0.0.0 connectport=40400 connectaddress=172.18.151.151
+netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=8080 connectaddress=172.18.151.151
+```
 
 ---
 
@@ -80,9 +82,10 @@ Ensure Windows allows incoming traffic on the ports you’ve forwarded:
 
 1. **Add firewall rules** in **PowerShell (Admin)**:
 
-`New-NetFirewallRule -DisplayName "Allow 40400" -Direction Inbound -Protocol TCP -LocalPort 40400 -Action Allow`
-
-`New-NetFirewallRule -DisplayName "Allow 8080" -Direction Inbound -Protocol TCP -LocalPort 8080 -Action Allow`
+```Powershell(admin)
+New-NetFirewallRule -DisplayName "Allow 40400" -Direction Inbound -Protocol TCP -LocalPort 40400 -Action Allow
+New-NetFirewallRule -DisplayName "Allow 8080" -Direction Inbound -Protocol TCP -LocalPort 8080 -Action Allow
+```
 
 2. **Verify the port forwarding**:
 
