@@ -106,13 +106,10 @@ Listen on ipv4: Connect to ipv4:
 
 Now that Docker Desktop is removed, let’s install Docker inside WSL.
 
-### **Run as root**:
-
-`su  # Change to root user`
-
-### **Install Docker**:
+### **Install Docker as root**:
 
 ```bash
+su
 sudo apt update -y
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
