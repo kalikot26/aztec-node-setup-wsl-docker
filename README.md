@@ -91,7 +91,9 @@ Ensure Windows allows incoming traffic on the ports you’ve forwarded:
 You should see:
 
 Listen on ipv4: Connect to ipv4:
+
 0.0.0.0:40400 172.18.151.151:40400
+
 0.0.0.0:8080 172.18.151.151:8080
 
 
@@ -202,6 +204,9 @@ While the node is running, check if ports 40400 and 8080 are being forwarded cor
 You should see something like:
 
 docker-pr 14254 root 4u IPv4 78228 0t0 TCP *:40400 (LISTEN)
+
 docker-pr 14261 root 4u IPv6 78233 0t0 TCP *:40400 (LISTEN)
+
 docker-pr 14301 root 4u IPv4 78250 0t0 TCP *:8080 (LISTEN)
-docker-pr 14308 root 4u IPv6 78253 0t0 TCP *:8080 (LISTEN
+
+docker-pr 14308 root 4u IPv6 78253 0t0 TCP *:8080 (LISTEN)
