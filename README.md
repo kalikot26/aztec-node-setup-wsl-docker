@@ -170,29 +170,24 @@ Now, let’s install and configure your **Aztec node** on the **alpha-testnet**:
 
 2. **Update your PATH**:
 
-   `echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bashrc`
-
-   `source ~/.bashrc`
+```
+   echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bashrc
+   source ~/.bashrc
+```
 
 3. **Start Aztec Node**:
 
-   `aztec-up alpha-testnet`
-
-   `aztec start --node --archiver --sequencer \`
-
-   `--network alpha-testnet \`
-
-   `--l1-rpc-urls RPC_URL  \`
-
-   `--l1-consensus-host-urls BEACON_URL \`
-
-   `--sequencer.validatorPrivateKey 0xYourPrivateKey \`
-
-   `--sequencer.coinbase 0xYourAddress \`
-
-   `--p2p.p2pIp YOUR_IP \`
-
-   `--p2p.maxTxPoolSize 1000000000`
+```
+   aztec-up alpha-testnet
+   aztec start --node --archiver --sequencer \
+   --network alpha-testnet \
+   --l1-rpc-urls RPC_URL  \
+   --l1-consensus-host-urls BEACON_URL \
+   --sequencer.validatorPrivateKey 0xYourPrivateKey \
+   --sequencer.coinbase 0xYourAddress \
+   --p2p.p2pIp YOUR_IP \
+   --p2p.maxTxPoolSize 1000000000
+```
 
 ---
 
