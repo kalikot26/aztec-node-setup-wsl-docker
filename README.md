@@ -214,6 +214,12 @@ docker-pr 14308 root 4u IPv6 78253 0t0 TCP *:8080 (LISTEN)
 
 ---
 
+## **Troubleshooting** 🚨
+
+If you still encounter the **0peers** issue after completing the setup, you may need to **port forward** **ports 8080** and **40400** on your **router/modem** to ensure proper network connectivity and peer synchronization.
+
+---
+
 ### **Credits** 🎉
 
 - The idea of installing **Docker inside a VM** was inspired by the work of **Vikash Kumar** and his [installation script](https://github.com/vikash-kumar01/installation_scripts/blob/master/docker.sh).
