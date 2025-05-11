@@ -162,18 +162,22 @@ Ensure the firewall is correctly configured:
 
 Now, let’s install and configure your **Aztec node** on the **alpha-testnet**:
 
-1. **Install Aztec**:
+1. **Install Packages**:
+
+`sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev  -y`
+
+2. **Install Aztec**:
 
    `bash -i <(curl -s https://install.aztec.network)`
 
-2. **Update your PATH**:
+3. **Update your PATH**:
 
 ```
    echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bashrc
    source ~/.bashrc
 ```
 
-3. **Start Aztec Node**:
+4. **Start Aztec Node**:
 
 ```bash
    aztec-up alpha-testnet
