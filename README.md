@@ -171,7 +171,8 @@ sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano aut
 2. **Install Aztec**:
 
    ```
-   bash -i <(curl -s https://install.aztec.network)```
+   bash -i <(curl -s https://install.aztec.network)
+   ```
 
 4. **Update your PATH**:
 
