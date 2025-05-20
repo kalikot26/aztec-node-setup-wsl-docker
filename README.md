@@ -107,9 +107,9 @@ Listen on ipv4: Connect to ipv4:
 Now that Docker Desktop is removed, let’s install Docker inside WSL.
 
 ### **Install Docker as root**:
+`su`
 
 ```bash
-su
 sudo apt update -y
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -165,8 +165,7 @@ Now, let’s install and configure your **Aztec node** on the **alpha-testnet**:
 1. **Install Packages**:
 
 ```
-sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev  -y
-```
+sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev  -y```
 
 2. **Install Aztec**:
 
